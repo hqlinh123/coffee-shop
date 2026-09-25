@@ -15,7 +15,7 @@ import {
   Min,
   ValidateNested,
 } from 'class-validator';
-import { OrderStatus, OrderType } from '../../generated/prisma/client';
+import { OrderStatus, OrderType } from '../generated/prisma/client';
 
 export class OrderItemDto {
   @ApiProperty({

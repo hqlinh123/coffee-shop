@@ -1,6 +1,6 @@
 import * as bcrypt from 'bcrypt';
+import { ProductStatus, Role } from '../src/generated/prisma/client';
 import { PrismaService } from '../prisma.service';
-import { ProductStatus, Role } from '../generated/prisma/enums';
 const prisma = new PrismaService();
 async function main() {
   const passwordHash = await bcrypt.hash('Admin@123', 12);

@@ -12,7 +12,7 @@ import { AuthUser, CurrentUser } from '../auth/current-user.decorator';
 import { Roles } from '../auth/roles.decorator';
 import { CreateEmployeeDto, UpdateEmployeeDto } from './employees.dto';
 import { EmployeesService } from './employees.service';
-import { Role } from '../../generated/prisma/client';
+import { Role } from '../generated/prisma/client';
 @Roles(Role.MANAGER)
 @Controller('employees')
 export class EmployeesController {

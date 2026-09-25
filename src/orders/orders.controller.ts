@@ -16,7 +16,7 @@ import {
   MoveTableDto,
 } from './orders.dto';
 import { OrdersService } from './orders.service';
-import { OrderStatus } from '../../generated/prisma/client';
+import { OrderStatus } from '../generated/prisma/client';
 @Controller('orders')
 export class OrdersController {
   constructor(private readonly service: OrdersService) {}

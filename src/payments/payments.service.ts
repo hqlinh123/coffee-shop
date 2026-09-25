@@ -6,7 +6,7 @@ import {
 import { makeCode } from '../common/code';
 import { PayOrderDto } from './payments.dto';
 import { PrismaService } from '../../prisma.service';
-import { OrderStatus, OrderType, PaymentMethod, PaymentStatus, Prisma, TableStatus } from '../../generated/prisma/client';
+import { OrderStatus, OrderType, PaymentMethod, PaymentStatus, Prisma, TableStatus } from '../generated/prisma/client';
 @Injectable()
 export class PaymentsService {
   constructor(private readonly prisma: PrismaService) {}

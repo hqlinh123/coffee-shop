@@ -12,7 +12,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { Pool, type PoolConfig } from 'pg';
 import 'dotenv/config';
-import { PrismaClient } from './generated/prisma/client';
+import { PrismaClient } from './src/generated/prisma/client';
 
 @Injectable()
 export class PrismaService

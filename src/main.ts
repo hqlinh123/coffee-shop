@@ -18,11 +18,16 @@ const isVercel = Boolean(process.env.VERCEL);
 let cachedApplication: ApplicationInstance | null = null;
 let bootstrapPromise: Promise<ApplicationInstance> | null = null;
 
-function configureApplication(app: INestApplication): void {
+function configureApplication(
+  app: INestApplication,
+): void {
   app.enableCors({
     origin: true,
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: [
+      'Content-Type',
+      'Authorization',
+    ],
   });
 
   app.setGlobalPrefix('api');
@@ -38,18 +43,45 @@ function configureApplication(app: INestApplication): void {
     }),
   );
 
-  // Swagger chỉ bật local hoặc khi chủ động cho phép.
-  if (!isVercel || process.env.ENABLE_SWAGGER === 'true') {
-    const swaggerConfig = new DocumentBuilder()
-      .setTitle('PMSShip API')
-      .setDescription('Maritime ERP System API')
-      .setVersion('1.0')
-      .addBearerAuth()
-      .build();
+  const swaggerEnabled = isVercel
+    ? process.env.ENABLE_SWAGGER === 'true'
+    : process.env.ENABLE_SWAGGER !== 'false';
 
-    const document = SwaggerModule.createDocument(app, swaggerConfig);
+  if (swaggerEnabled) {
+    const swaggerConfig =
+      new DocumentBuilder()
+        .setTitle('Coffee Shop API')
+        .setDescription(
+          'Coffee Shop Management System API',
+        )
+        .setVersion('1.0')
+        .addBearerAuth(
+          {
+            type: 'http',
+            scheme: 'bearer',
+            bearerFormat: 'JWT',
+          },
+          'access-token',
+        )
+        .build();
 
-    SwaggerModule.setup('api/docs', app, document);
+    const document =
+      SwaggerModule.createDocument(
+        app,
+        swaggerConfig,
+      );
+
+    SwaggerModule.setup(
+      'api/docs',
+      app,
+      document,
+      {
+        swaggerOptions: {
+          persistAuthorization: true,
+        },
+        customSiteTitle: 'Coffee Shop API',
+      },
+    );
   }
 }
 

@@ -127,7 +127,6 @@ async function bootstrapStandalone(): Promise<void> {
   const port = Number(process.env.PORT) || 8088;
 
   await app.listen(port, '0.0.0.0');
-
   console.log(`Application running at http://localhost:${port}`);
   console.log(`API prefix: http://localhost:${port}/api`);
 
@@ -135,6 +134,7 @@ async function bootstrapStandalone(): Promise<void> {
     console.log(`Swagger: http://localhost:${port}/api/docs`);
   }
 }
+
 
 // Vercel chỉ gọi default export, không mở port.
 if (!isVercel) {

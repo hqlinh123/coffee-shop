@@ -12,7 +12,7 @@ import { Public } from '../auth/public.decorator';
 import { Roles } from '../auth/roles.decorator';
 import { CreateProductDto, UpdateProductDto } from './products.dto';
 import { ProductsService } from './products.service';
-import { Role } from '../../generated/prisma/enums';
+import { Role } from '../../generated/prisma/client';
 @Controller('products')
 export class ProductsController {
   constructor(private readonly service: ProductsService) {}

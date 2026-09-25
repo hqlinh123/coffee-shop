@@ -1,7 +1,7 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { Roles } from '../auth/roles.decorator';
 import { InvoicesService } from './invoices.service';
-import { PaymentMethod, Role } from '../../generated/prisma/enums';
+import { PaymentMethod, Role } from '../../generated/prisma/client';
 @Controller('invoices')
 export class InvoicesController {
   constructor(private readonly service: InvoicesService) {}

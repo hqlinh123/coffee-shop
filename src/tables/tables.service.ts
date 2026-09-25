@@ -1,8 +1,8 @@
 import { ConflictException, Injectable } from '@nestjs/common';
 import { throwPrismaError } from '../common/prisma-error';
 import { CreateTableDto, UpdateTableDto } from './tables.dto';
-import { TableStatus } from '../../generated/prisma/enums';
 import { PrismaService } from '../../prisma.service';
+import { TableStatus } from '../../generated/prisma/client';
 @Injectable()
 export class TablesService {
   constructor(private readonly prisma: PrismaService) {}

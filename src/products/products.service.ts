@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { makeCode } from '../common/code';
 import { throwPrismaError } from '../common/prisma-error';
 import { CreateProductDto, UpdateProductDto } from './products.dto';
-import { ProductStatus } from '../../generated/prisma/enums';
 import { PrismaService } from '../../prisma.service';
+import { ProductStatus } from '../../generated/prisma/client';
 @Injectable()
 export class ProductsService {
   constructor(private readonly prisma: PrismaService) {}

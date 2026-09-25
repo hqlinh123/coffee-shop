@@ -12,7 +12,7 @@ import {
   MaxLength,
   MinLength,
 } from 'class-validator';
-import { EmploymentStatus, Role } from '../../generated/prisma/enums';
+import { EmploymentStatus, Role } from '../../generated/prisma/client';
 
 export class CreateEmployeeDto {
   @ApiProperty({

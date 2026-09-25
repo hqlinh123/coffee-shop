@@ -12,7 +12,7 @@ import {
   MaxLength,
   Min,
 } from 'class-validator';
-import { ProductStatus } from '../../generated/prisma/enums';
+import { ProductStatus } from '../../generated/prisma/client';
 
 export class CreateProductDto {
   @ApiProperty({

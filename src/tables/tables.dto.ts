@@ -8,7 +8,7 @@ import {
   IsOptional,
   Min,
 } from 'class-validator';
-import { TableStatus } from '../../generated/prisma/enums';
+import { TableStatus } from '../../generated/prisma/client';
 
 export class CreateTableDto {
   @ApiProperty({

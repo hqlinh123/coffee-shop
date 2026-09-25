@@ -11,7 +11,7 @@ import { Public } from '../auth/public.decorator';
 import { Roles } from '../auth/roles.decorator';
 import { CategoryDto } from './categories.dto';
 import { CategoriesService } from './categories.service';
-import { Role } from '../../generated/prisma/enums';
+import { Role } from '../../generated/prisma/client';
 @Controller('categories')
 export class CategoriesController {
   constructor(private readonly service: CategoriesService) {}

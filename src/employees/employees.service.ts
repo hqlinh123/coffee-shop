@@ -8,7 +8,7 @@ import { makeCode } from '../common/code';
 import { throwPrismaError } from '../common/prisma-error';
 import { CreateEmployeeDto, UpdateEmployeeDto } from './employees.dto';
 import { PrismaService } from '../../prisma.service';
-import { EmploymentStatus, UserStatus } from '../../generated/prisma/enums';
+import { EmploymentStatus, UserStatus } from '../../generated/prisma/client';
 @Injectable()
 export class EmployeesService {
   constructor(private readonly prisma: PrismaService) {}

@@ -1,7 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { PaymentMethod } from '../../generated/prisma/enums';
 import { PrismaService } from '../../prisma.service';
-import { Prisma } from '../../generated/prisma/client';
+import { PaymentMethod, Prisma } from '../../generated/prisma/client';
 @Injectable()
 export class InvoicesService {
   constructor(private readonly prisma: PrismaService) {}

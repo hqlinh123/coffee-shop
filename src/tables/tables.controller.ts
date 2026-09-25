@@ -10,7 +10,7 @@ import {
 import { Roles } from '../auth/roles.decorator';
 import { CreateTableDto, UpdateTableDto } from './tables.dto';
 import { TablesService } from './tables.service';
-import { Role } from '../../generated/prisma/enums';
+import { Role } from '../../generated/prisma/client';
 @Controller('tables')
 export class TablesController {
   constructor(private readonly service: TablesService) {}

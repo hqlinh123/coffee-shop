@@ -9,7 +9,7 @@ import {
   Min,
   ValidateIf,
 } from 'class-validator';
-import { PaymentMethod } from '../../generated/prisma/enums';
+import { PaymentMethod } from '../../generated/prisma/client';
 
 export class PayOrderDto {
   @ApiProperty({

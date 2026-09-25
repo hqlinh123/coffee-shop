@@ -6,14 +6,7 @@ import {
 } from '@nestjs/common';
 import { makeCode } from '../common/code';
 import { AddItemsDto, CreateOrderDto } from './orders.dto';
-import { Prisma } from '../../generated/prisma/client';
-import {
-  OrderStatus,
-  ProductStatus,
-  OrderType,
-  TableStatus,
-  PaymentStatus,
-} from '../../generated/prisma/enums';
+import { OrderStatus, OrderType, PaymentStatus, Prisma, ProductStatus, TableStatus } from '../../generated/prisma/client';
 import { PrismaService } from '../../prisma.service';
 @Injectable()
 export class OrdersService {
